@@ -1,0 +1,100 @@
+<div class="container">
+
+  <!-- User Sign UP -->
+
+  <div class="row sign-up row-center" *ngIf="signstatus == 'signup'">
+      <div class="col-sm-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email"  ng-required ="true" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" #email>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputContact1">Contact No</label>
+                <input type="text" class="form-control" id="exampleInputContact1" placeholder="Contact No" #contactNo>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputUsername1">Username</label>
+                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" #username>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #password>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="column">
+                    <div class="col-sm-4">
+                      <button type="button" class="btn btn-primary" (click)="singUpToAWS(email,contactNo,username,password)">SignUp</button>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="col-sm-4">
+                      <button type="button" class="btn btn-primary" (click)="onSignIn()">SignIn</button>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+      </div>
+  </div>
+
+  <!-- User Sign In -->
+ 
+  <form [formGroup]="account" (ngSubmit)="signInToAWS()">
+    <div class="row sign-in row-center" *ngIf="signstatus == 'signin'">
+      <div class="col-sm-6">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input formControlName="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+              </div>
+              <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+                <div *ngIf="username.errors.required">Username is required.</div>
+                <div *ngIf="username.errors.minlength">
+                  Username must be at least 4 characters long.
+                </div>
+              </div> 
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input formControlName="password" required type="password" class="form-control" id="password" placeholder="Password" >
+              </div>
+              <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.errors.required">Password is required.</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 8 characters long.
+                </div>
+              </div> 
+              <div class="form-group">
+                <div class="row">
+                  <div class="column">
+                    <div class="col-sm-4">
+                      <button type="submit" class="btn btn-primary">SignIn</button>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="col-sm-4">
+                      <button type="button" class="btn btn-primary" (click)="onSignUp()">SignUp</button>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div class="form-group">
+                <div *ngIf="account.errors" class="alert alert-danger">The username or password is invalid.</div>
+              </div>
+      </div>
+  </div>
+  </form>
+
+  <!-- Email verification -->
+  
+  <div class="row row-center" *ngIf="userVerified">
+      <div class="col-sm-6">
+              <div class="form-group">
+                <label for="exampleInputverifycode1">Verifiacation Code</label>
+                <input type="number" class="form-control" id="exampleInputverifycode1" aria-describedby="verifyCodeHelp" placeholder="Enter the code" #verifycode>
+                <small id="emailHelp" class="form-text text-muted">Please enter the verification code that we sent to your email</small>
+              </div>
+              <button type="button" class="btn btn-success" (click)="onVerify(verifycode)">Verify</button>
+      </div>
+  </div>
+
+</div>

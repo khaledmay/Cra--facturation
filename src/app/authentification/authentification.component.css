@@ -1,0 +1,14 @@
+.container {
+    margin-top: 8%;
+}
+
+.row-center {
+    justify-content: center;
+}
+
+label {
+    border-width: 1px;
+    font-size: large;
+    font-weight: bold;
+
+}

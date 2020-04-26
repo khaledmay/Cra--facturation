@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-craproject-dev-133430-authRole",
+            "UnauthRoleArn": "arn:aws:iam::510187999019:role/amplify-craproject-dev-133430-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::510187999019:role/amplify-craproject-dev-133430-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-craproject-dev-133430-deployment",
+            "UnauthRoleName": "amplify-craproject-dev-133430-unauthRole",
+            "StackName": "amplify-craproject-dev-133430",
+            "StackId": "arn:aws:cloudformation:us-east-2:510187999019:stack/amplify-craproject-dev-133430/685c42e0-8556-11ea-b35c-0a7adbd72fc8",
+            "AmplifyAppId": "d1cho7fdlty9sg"
+        },
+        "categories": {
+            "auth": {
+                "craproject1698ae41": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1cho7fdlty9sg",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
