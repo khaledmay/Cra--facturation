@@ -1,6 +1,5 @@
 import { Component, OnInit ,Output ,EventEmitter } from '@angular/core';
 import { DateService } from '../services/date.service';
-import { DayWorked } from '../enums/DayWorked';
 import { DayName } from '../models/DayName';
 
 @Component({
