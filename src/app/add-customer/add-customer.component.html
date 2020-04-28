@@ -31,13 +31,10 @@
                 <input formControlName="juridiqueStatus" type="text" class="form-control" id="juridiqueStatus" aria-describedby="juridiqueStatus Help" placeholder="Enter juridiqueStatus">
             </div>
             <div class="form-group">
-                <label for="campagny">campagny</label>
+                <label>campany</label>
                 <br/>
-                <select #choice id="campagny" (change)="chooseCampagny(choice.value)">
-                    <option value="">-----</option>
-                    <option value="campagny1">campagny1</option>
-                    <option value="campagny2">campagny2</option>
-                    <option value="campagny3">campagny3</option>
+                <select #choice (change)="chooseCampany(choice.value)">
+                    <option [value]="campany.denomination" *ngFor="let campany of Campanies">{{campany.denomination}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -45,7 +42,7 @@
             </div>
             <div class="form-group">
                 <div *ngIf="customer.errors" class="alert alert-danger">The formular is invalid.</div>
-              </div>
+            </div>
         </div>
     </form>
 </div>
