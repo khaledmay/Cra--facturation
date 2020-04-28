@@ -1,41 +1,55 @@
-<div class="customer">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <h5>Add a customer</h5>
-        </div>
-        <div class="form-group">
-            <label for="denomination ">denomination</label>
-            <input formControlName="denomination" type="text" class="form-control" id="denomination" aria-describedby="denomination Help" placeholder="Enter denomination">
-          </div>
-        <div class="form-group">
-          <label for="responsableManager">responsableManager</label>
-          <input formControlName="responsableManager" type="text" class="form-control" id="responsableManager" aria-describedby="responsableManager Help" placeholder="Enter responsableManager">
-        </div>
-        <div class="form-group">
-            <label for="tva">tva </label>
-            <input formControlName="tva" type="text" class="form-control" id="tva" aria-describedby="tva Help" placeholder="Enter tva">
-        </div>
-        <div class="form-group">
-            <label for="siret ">siret  </label>
-            <input formControlName="siret " type="text" class="form-control" id="siret " aria-describedby="siret Help" placeholder="Enter siret">
-        </div>
-        <div class="form-group">
-            <label for="juridiqueStatus">juridiqueStatus</label>
-            <input formControlName="juridiqueStatus" type="text" class="form-control" id="juridiqueStatus" aria-describedby="juridiqueStatus Help" placeholder="Enter juridiqueStatus">
-        </div>
-        <div class="form-group">
-            <label for="campagny">campagny</label>
-            <br/>
-            <select id="campagny"  #campagny (change)="chooseCampagny(campagny.value)">
-                <option value="campagny1">campagny1</option>
-                <option value="campagny2">campagny2</option>
-                <option value="campagny3">campagny3</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <button type="button" class="btn btn-primary" (click)="addCustomer()">Confirm</button>
-        </div>
+<div class="addCustomer">
+    <div class="form-group">
+        <h5>Add a customer</h5>
     </div>
+    <form [formGroup]="customer" (ngSubmit)="addCustomer()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="denomination ">denomination</label>
+                <input formControlName="denomination" type="text" class="form-control" id="denomination" aria-describedby="denomination Help" placeholder="Enter denomination">
+            </div>
+            <div class="alert alert-danger" *ngIf="denomination.touched && denomination.invalid">
+                <div *ngIf="denomination.errors.required">denomination is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="responsableManager">responsableManager</label>
+              <input formControlName="responsableManager" type="text" class="form-control" id="responsableManager" aria-describedby="responsableManager Help" placeholder="Enter responsableManager">
+            </div>
+            <div class="alert alert-danger" *ngIf="responsableManager.touched && responsableManager.invalid">
+                <div *ngIf="responsableManager.errors.required">responsableManager is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="tva">tva </label>
+                <input formControlName="tva" type="text" class="form-control" id="tva" aria-describedby="tva Help" placeholder="Enter tva">
+            </div>
+            <div class="form-group">
+                <label for="siret">siret </label>
+                <input formControlName="siret" type="text" class="form-control" id="siret" aria-describedby="siret Help" placeholder="Enter siret">
+            </div>
+            <div class="form-group">
+                <label for="juridiqueStatus">juridiqueStatus</label>
+                <input formControlName="juridiqueStatus" type="text" class="form-control" id="juridiqueStatus" aria-describedby="juridiqueStatus Help" placeholder="Enter juridiqueStatus">
+            </div>
+            <div class="form-group">
+                <label for="campagny">campagny</label>
+                <br/>
+                <select #choice id="campagny" (change)="chooseCampagny(choice.value)">
+                    <option value="">-----</option>
+                    <option value="campagny1">campagny1</option>
+                    <option value="campagny2">campagny2</option>
+                    <option value="campagny3">campagny3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">SignIn</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="customer.errors" class="alert alert-danger">The formular is invalid.</div>
+              </div>
+        </div>
+    </form>
 </div>
+
+
 
 
