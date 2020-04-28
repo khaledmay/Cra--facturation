@@ -1,0 +1,28 @@
+div.button {
+  text-align: center;
+}
+
+table.timecard {
+	margin: auto;
+	width: 600px;
+	border-collapse: collapse;
+	border: 1px solid black;
+  	margin-bottom: 2%;
+}
+
+table.timecard thead th {
+	padding: 8px;
+	background-color: #d6f2e0;
+	font-size: large;
+}
+
+
+table.timecard th, table.timecard td {
+	border-width: 1px;
+	border-style: solid;
+  border-color:  black;
+}
+
+input{
+  text-align:center;
+}

@@ -1,34 +1,17 @@
 <div class="Month">
     <label class="start">Select a month : </label>
-    <input type="month" id="month" name="month" class="month" min="2018-03" [value]=currentMonth #month>
+    <input type="month" id="month" name="month" class="month" min="2018-03" [value]=CurrentMonth #month (change)="selectMonth(month)">
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-6">
+        <app-week [dates]="FirstHalf"></app-week>
+    </div>
+    <div class="col-sm-6">
+        <app-week [dates]="SecondHalf"></app-week>
+    </div>
 </div>
 <div class="button">
-    <button type="button" class="btn btn-primary" (click)="selectMonth(month)">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="confirmCra()">Confirm Cra</button>
 </div>
-<br/> 
-<table class="timecard">
-    <thead>
-        <tr>
-            <th class="col-sm-4">DayName</th>
-            <th class="col-sm-4">Day</th>
-            <th class="col-sm-4">DayWorked</th>
-            <th class="col-sm-4">HoursWorked</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let day of getDays()">
-            <td class="col-sm-5">{{day.dayName}}</td>
-            <td class="col-sm-5">{{day.date}}</td>
-            <td class="col-sm-4">
-                <select #choice (change)="changeDayWorked(day,choice.value)">
-                    <option value="CRM">CRM</option>
-                    <option value="RTT">RTT</option>
-                    <option value="CP">CP</option>
-                </select>
-            </td>
-            <td class="col-sm-4" *ngIf="day.dayWorked=='CRM'">
-                <input type="text" id="hoursWorked" name="hoursWorked" [value]=day.hoursWorked>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<br/>

@@ -4,14 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { WriteCraComponent } from './write-cra/write-cra.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WeekComponent } from './week/week.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthentificationComponent,
-    WriteCraComponent
+    WriteCraComponent,
+    WeekComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,

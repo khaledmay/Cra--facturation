@@ -43,6 +43,7 @@ export class AuthentificationComponent implements OnInit {
       this.authentificationService.signInToAWS(this.account.get('username').value,this.account.get('password').value).then(user => {
         this.authentificationService.setAuthentificationStatus(true);
         this.route.navigate(['/writeCra']);
+        console.log(user);
       })
         .catch( err => {
           this.account.setErrors({

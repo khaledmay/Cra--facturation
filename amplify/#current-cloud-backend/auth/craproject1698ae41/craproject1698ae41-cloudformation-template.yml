@@ -8,9 +8,6 @@ Parameters:
   unauthRoleArn:
     Type: String
   
-  
-
-    
   identityPoolName:
     Type: String
                 

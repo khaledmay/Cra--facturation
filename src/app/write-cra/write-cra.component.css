@@ -1,25 +1,9 @@
-.choose-month {
-    position: relative;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-}
-
-label.start {
-	color: #281E5D;
-	font-size: large;
-	font-weight: bold;
-   
-}
 
 input.month {
 	color: #281E5D;
 	font-size: large;
 	font-weight: bold;
-    
 }
-
 
 div.Month {
 text-align:center;
@@ -30,27 +14,8 @@ div.button {
   text-align: center;
 }
 
-table.timecard {
-	margin: auto;
-	width: 600px;
-	border-collapse: collapse;
-	border: 1px solid black;
-  margin-bottom: 2%;
-}
-
-table.timecard thead th {
-	padding: 8px;
-	background-color: #d6f2e0;
-	font-size: large;
-}
-
-
-table.timecard th, table.timecard td {
-	border-width: 1px;
-	border-style: solid;
-  border-color:  black;
-}
-
 input{
   text-align:center;
 }
+
+

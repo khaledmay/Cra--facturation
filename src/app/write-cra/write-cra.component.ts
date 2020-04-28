@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output ,EventEmitter } from '@angular/core';
 import { DateService } from '../services/date.service';
 import { DayWorked } from '../enums/DayWorked';
 import { DayName } from '../models/DayName';
@@ -8,12 +8,17 @@ import { DayName } from '../models/DayName';
   templateUrl: './write-cra.component.html',
   styleUrls: ['./write-cra.component.css']
 })
+
 export class WriteCraComponent implements OnInit {
   
-  year: number;
-  month: number;
-  currentMonth: string;
+  private year: number;
+  private month: number;
+  private currentMonth: string;
+  private firstHalf: DayName[]=[];
+  private secondHalf: DayName[]=[];
   private days: DayName[];
+
+  @Output('change') change = new EventEmitter();
   constructor(private dateService: DateService) { 
     this.year=this.dateService.getCurrentDate().getFullYear();
     this.month=this.dateService.getCurrentDate().getUTCMonth();
@@ -23,32 +28,38 @@ export class WriteCraComponent implements OnInit {
       this.currentMonth=this.year+"-0"+month;
     else
       this.currentMonth=this.year+"-"+month;
+      for(var i=0;i<this.days.length/2;i++){
+        this.firstHalf.push(this.days[i]);
+      }
+      for(var i=this.days.length/2;i<this.days.length;i++){
+        this.secondHalf.push(this.days[i]);
+      }
   }
 
   ngOnInit(): void {
 
   }
 
-  public getDays(): DayName[]{
-    return this.days;
+  public get FirstHalf(): DayName[]{
+    return this.firstHalf;
   }
 
-  public changeDayWorked(day:DayName,choice:String):void{
-    switch(choice){
-      case "CP" : day.dayWorked=DayWorked.CP;
-      break;
-      case "RTT" : day.dayWorked=DayWorked.RTT;
-      break;
-      case "CRM" : day.dayWorked=DayWorked.CRM;
-      break;
-      default : day.dayWorked=DayWorked.CRM;
-    }
+  public get SecondHalf(): DayName[]{
+    return this.secondHalf;
   }
 
   selectMonth (month:HTMLInputElement){
     this.currentMonth=month.value;
     this.month=parseInt(month.value.substring(5,7))-1;
     this.days=this.dateService.generateDates(this.month,this.year);
+  }
+
+  confirmCra(): void{
+    console.log(this.days);
+  }
+
+  public get CurrentMonth():string {
+    return this.currentMonth;
   }
 
   }
