@@ -1,0 +1,35 @@
+<div class="addCampagny">
+    <div class="form-group">
+        <h5>Add a campagny</h5>
+    </div>
+    <form [formGroup]="campagny" (ngSubmit)="addCampagny()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="denomination ">denomination</label>
+                <input formControlName="denomination" type="text" class="form-control" id="denomination" aria-describedby="denomination Help" placeholder="Enter denomination">
+            </div>
+            <div class="alert alert-danger" *ngIf="denomination.touched && denomination.invalid">
+                <div *ngIf="denomination.errors.required">denomination is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="campanyType">campanyType</label>
+              <input formControlName="campanyType" type="text" class="form-control" id="campanyType" aria-describedby="campanyType Help" placeholder="Enter campanyType">
+            </div>
+            <div class="alert alert-danger" *ngIf="campanyType.touched && campanyType.invalid">
+                <div *ngIf="campanyType.errors.required">campanyType is required.</div>
+            </div>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">SignIn</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="campagny.errors" class="alert alert-danger">The formular is invalid.</div>
+              </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+

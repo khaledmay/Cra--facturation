@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeekComponent } from './week/week.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component'; 
 import { HttpClientModule } from '@angular/common/http';
+import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
     AuthentificationComponent,
     WriteCraComponent,
     WeekComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddCampagnyComponent
+ 
   ],
   imports: [
     BrowserModule,
