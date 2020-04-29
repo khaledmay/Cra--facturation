@@ -40,6 +40,8 @@ export class AuthentificationComponent implements OnInit {
   }
 
   signInToAWS() {
+    if(this.username.status=="VALID" && this.password.status=="VALID")
+    {
       this.authentificationService.signInToAWS(this.account.get('username').value,this.account.get('password').value).then(user => {
         this.authentificationService.setAuthentificationStatus(true);
         this.route.navigate(['/writeCra']);
@@ -51,7 +53,12 @@ export class AuthentificationComponent implements OnInit {
           });
           console.log(this.account);
           console.log(err)
-        });         
+        });   
+    }
+    this.account.setErrors({
+      invalidUsernameOrPassword:true
+    });
+      
   }
 
   onVerify(verifycode: HTMLInputElement) {
@@ -72,11 +79,11 @@ export class AuthentificationComponent implements OnInit {
     .catch(err => console.log(err));
   }
 
-  get username(){
+  public get username(){
     return this.account.get('username');
   }
 
-  get password(){
+  public get password(){
     return this.account.get('password');
   }
 

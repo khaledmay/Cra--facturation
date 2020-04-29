@@ -13,8 +13,8 @@ export class WriteCraComponent implements OnInit {
   private year: number;
   private month: number;
   private currentMonth: string;
-  private firstHalf: DayName[]=[];
-  private secondHalf: DayName[]=[];
+  private firstHalf: DayName[];
+  private secondHalf: DayName[];
   private days: DayName[];
 
   @Output('change') change = new EventEmitter();
@@ -27,12 +27,8 @@ export class WriteCraComponent implements OnInit {
       this.currentMonth=this.year+"-0"+month;
     else
       this.currentMonth=this.year+"-"+month;
-      for(var i=0;i<this.days.length/2;i++){
-        this.firstHalf.push(this.days[i]);
-      }
-      for(var i=this.days.length/2;i<this.days.length;i++){
-        this.secondHalf.push(this.days[i]);
-      }
+    this.extractFirstHalf();
+    this.extractSecondHalf();
   }
 
   ngOnInit(): void {
@@ -51,6 +47,8 @@ export class WriteCraComponent implements OnInit {
     this.currentMonth=month.value;
     this.month=parseInt(month.value.substring(5,7))-1;
     this.days=this.dateService.generateDates(this.month,this.year);
+    this.extractFirstHalf();
+    this.extractSecondHalf();
   }
 
   confirmCra(): void{
@@ -60,6 +58,21 @@ export class WriteCraComponent implements OnInit {
   public get CurrentMonth():string {
     return this.currentMonth;
   }
+
+  private extractFirstHalf():void{
+    this.firstHalf=[];
+    for(var i=0;i<this.days.length/2;i++){
+      this.firstHalf.push(this.days[i]);
+    }
+  }
+
+  private extractSecondHalf():void{
+    this.secondHalf=[];
+    for(var i=Math.floor(this.days.length/2);i<this.days.length;i++){
+      this.secondHalf.push(this.days[i]);
+    }
+  }
+
 
   }
 
