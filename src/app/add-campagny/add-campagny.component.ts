@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Campagny } from '../models/Campagny';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RequestService } from '../services/requests.service';
 @Component({
   selector: 'app-add-campagny',
   templateUrl: './add-campagny.component.html',
@@ -8,14 +9,17 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddCampagnyComponent implements OnInit {
 
+  private url:String;
   private customer: String;
+
   campagny=new FormGroup({
     denomination : new FormControl('', Validators.required),
     campanyType : new FormControl('', Validators.required)
-    
     });
 
-  constructor() { }
+  constructor(private requestService : RequestService) {
+    this.url=""; // url of the backend service which save the campany in the database
+   }
 
   ngOnInit(): void {
   }
@@ -26,6 +30,7 @@ export class AddCampagnyComponent implements OnInit {
     {
       campagny=new Campagny(this.denomination.value,this.campanyType.value);
       console.log(campagny);
+      this.requestService.post(this.url,campagny).subscribe(resultat => console.log(resultat));
     }
     else
       this.campagny.setErrors({required: true});

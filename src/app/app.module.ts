@@ -18,7 +18,6 @@ import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
     WeekComponent,
     AddCustomerComponent,
     AddCampagnyComponent
- 
   ],
   imports: [
     BrowserModule,
