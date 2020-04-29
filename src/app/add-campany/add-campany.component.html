@@ -1,8 +1,8 @@
-<div class="addCampagny">
+<div class="addCampany">
     <div class="form-group">
-        <h5>Add a campagny</h5>
+        <h5>Add a campany</h5>
     </div>
-    <form [formGroup]="campagny" (ngSubmit)="addCampagny()">
+    <form [formGroup]="campany" (ngSubmit)="addCampany()">
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="denomination ">denomination</label>
@@ -23,7 +23,7 @@
                 <button type="submit" class="btn btn-primary">SignIn</button>
             </div>
             <div class="form-group">
-                <div *ngIf="campagny.errors" class="alert alert-danger">The formular is invalid.</div>
+                <div *ngIf="campany.errors" class="alert alert-danger">The formular is invalid.</div>
               </div>
         </div>
     </form>

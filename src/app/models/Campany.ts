@@ -1,10 +1,13 @@
 export class Campany{
 
     public denomination : String;
-    public companyType  : String;
+    public companyType : String;
     
-    constructor(denomination : String, companyType : String){
+    constructor(denomination : String, campanyType : String){
         this.denomination=denomination;
-        this.companyType=companyType;
+        this.companyType=campanyType;
+    
+
     }
+
 }
