@@ -6,10 +6,9 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { WriteCraComponent } from './write-cra/write-cra.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeekComponent } from './week/week.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component'; 
+import { HttpClientModule } from '@angular/common/http';
 import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
-
-
 
 @NgModule({
   declarations: [
@@ -25,7 +24,8 @@ import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

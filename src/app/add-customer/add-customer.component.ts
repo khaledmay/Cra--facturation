@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Customer } from '../models/Customer';
+import { Campany } from '../models/Campany';
+import { RequestService } from '../services/requests.service';
+
 
 @Component({
   selector: 'app-add-customer',
@@ -9,7 +12,9 @@ import { Customer } from '../models/Customer';
 })
 export class AddCustomerComponent implements OnInit {
 
-  private campagny: String;
+  private url:String;
+  private campanies : Campany[]=[];
+  private choosenCampany: String;
   customer=new FormGroup({
     denomination : new FormControl('', Validators.required),
     responsableManager : new FormControl('', Validators.required),
@@ -18,21 +23,28 @@ export class AddCustomerComponent implements OnInit {
     juridiqueStatus : new FormControl('')
     });
 
-  constructor() { }
+  constructor(private requestService : RequestService) { 
+    this.url=""; // url of the backend service which save the customer in the database
+    // this.campanies= this.requestService.get()
+    this.campanies.push(new Campany("campany1","esn"));
+    this.campanies.push(new Campany("campany2","esn"));
+    this.campanies.push(new Campany("campany3","esn"));
+  }
 
   ngOnInit(): void {
   }
 
-  public chooseCampagny(campagny : String) : void {
-    this.campagny=campagny;
+  public chooseCampany(campagny : String) : void {
+    this.choosenCampany=campagny;
   }
 
   addCustomer() : void {
     let customer : Customer;
     if(this.denomination.status=="VALID" && this.responsableManager.status=="VALID")
     {
-      customer=new Customer(this.denomination.value,this.customer.get('juridiqueStatus').value,this.responsableManager.value,this.customer.get('siret').value,this.customer.get('tva').value,this.campagny);
+      customer=new Customer(this.denomination.value,this.customer.get('juridiqueStatus').value,this.responsableManager.value,this.customer.get('siret').value,this.customer.get('tva').value,this.choosenCampany);
       console.log(customer);
+      this.requestService.post(this.url,customer).subscribe(resultat => console.log(resultat));
     }
     else
       this.customer.setErrors({required: true});
@@ -44,6 +56,10 @@ export class AddCustomerComponent implements OnInit {
 
   public get responsableManager(){
     return this.customer.get('responsableManager');
+  }
+
+  public get Campanies(): Campany[] {
+    return this.campanies;
   }
 
 

@@ -6,21 +6,21 @@ import { HttpClient } from '@angular/common/http';
   })
 export class RequestService {
 
-  constructor(private url : string ,private http : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-  public getAll(){
-    return this.http.get(this.url)
+  public get(url){
+    return this.http.get(url);
   }
 
-  public create(post){
-    return this.http.post(this.url,JSON.stringify(post))
+  public post(url,object){
+    return this.http.post(url,JSON.stringify(object))
   }
 
-  public update(post){
-    return this.http.patch(this.url + '/' + post.id ,JSON.stringify({title : "updated field"}))
+  public update(url,object){
+    return this.http.patch(url + '/' + object.id ,JSON.stringify({title : "updated field"}))
   }
 
-  public delete(id){
-    return this.http.delete(this.url + '/' + id);
+  public delete(url,id){
+    return this.http.delete(url + '/' + id);
   }
 }

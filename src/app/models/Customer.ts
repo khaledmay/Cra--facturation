@@ -14,7 +14,6 @@ export class Customer{
         this.siret=siret;
         this.tva=tva;
         this.campany=campany;
-
     }
 
 }
