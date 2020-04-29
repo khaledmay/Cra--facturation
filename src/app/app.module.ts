@@ -6,7 +6,9 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { WriteCraComponent } from './write-cra/write-cra.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeekComponent } from './week/week.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component'; 
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
+
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     AuthentificationComponent,
     WriteCraComponent,
     WeekComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddCampagnyComponent
+ 
   ],
   imports: [
     BrowserModule,
