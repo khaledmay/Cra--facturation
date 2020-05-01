@@ -8,8 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeekComponent } from './week/week.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component'; 
 import { HttpClientModule } from '@angular/common/http';
-import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { AddCampanyComponent } from './add-campany/add-campany.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,9 @@ import { AddProjectComponent } from './add-project/add-project.component';
     WriteCraComponent,
     WeekComponent,
     AddCustomerComponent,
-    AddCampagnyComponent,
-    AddProjectComponent
-  ],
+    AddProjectComponent,
+    AddCampanyComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
