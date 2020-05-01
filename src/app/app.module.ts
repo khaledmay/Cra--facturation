@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
@@ -9,6 +9,7 @@ import { WeekComponent } from './week/week.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component'; 
 import { HttpClientModule } from '@angular/common/http';
 import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
     WriteCraComponent,
     WeekComponent,
     AddCustomerComponent,
-    AddCampagnyComponent
+    AddCampagnyComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Campagny } from '../models/Campagny';
+import { Campany } from '../models/Campany';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RequestService } from '../services/requests.service';
 @Component({
@@ -12,7 +12,7 @@ export class AddCampagnyComponent implements OnInit {
   private url:String;
   private customer: String;
 
-  campagny=new FormGroup({
+  campany=new FormGroup({
     denomination : new FormControl('', Validators.required),
     campanyType : new FormControl('', Validators.required)
     });
@@ -24,24 +24,24 @@ export class AddCampagnyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addCampagny() : void {
-    let campagny : Campagny;
+  addCampany() : void {
+    let campany : Campany;
     if(this.denomination.status=="VALID" && this.campanyType.status=="VALID")
     {
-      campagny=new Campagny(this.denomination.value,this.campanyType.value);
-      console.log(campagny);
-      this.requestService.post(this.url,campagny).subscribe(resultat => console.log(resultat));
+      campany=new Campany(this.denomination.value,this.campanyType.value);
+      console.log(campany);
+      this.requestService.post(this.url,campany).subscribe(resultat => console.log(resultat));
     }
     else
-      this.campagny.setErrors({required: true});
+      this.campany.setErrors({required: true});
   }
 
   public get denomination(){
-    return this.campagny.get('denomination');
+    return this.campany.get('denomination');
   }
 
   public get campanyType(){
-    return this.campagny.get('campanyType');
+    return this.campany.get('campanyType');
   }
 
 }

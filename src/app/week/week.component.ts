@@ -20,7 +20,6 @@ export class WeekComponent implements OnInit {
   public changeHoursWorked(day:DayName,hoursWorked:HTMLInputElement):void {
     day.hoursWorked=parseInt(hoursWorked.value);
   }
-
   
   public changeDayWorked(day:DayName,choice:String):void{
     switch(choice){
@@ -30,8 +29,16 @@ export class WeekComponent implements OnInit {
       break;
       case "CRM" : day.dayWorked=DayWorked.CRM;
       break;
+      case "SICK_LEAVE" : day.dayWorked=DayWorked.SICK_LEAVE;
+      break;
       default : day.dayWorked=DayWorked.CRM;
     }
+  }
+
+  public dayIsWorked() : Array<string> {
+    const dayworked = DayWorked;
+    var keys = Object.keys(dayworked);
+    return keys;
   }
 
 }

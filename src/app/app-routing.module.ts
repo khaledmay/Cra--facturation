@@ -4,6 +4,7 @@ import { AuthentificationComponent }  from 'src/app/authentification/authentific
 import { WriteCraComponent }  from 'src/app/write-cra/write-cra.component' ;
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { AddCampagnyComponent } from './add-campagny/add-campagny.component';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,9 @@ const routes: Routes = [
   { path: 'login' , component: AuthentificationComponent},
   { path: 'writeCra' , component: WriteCraComponent},
   { path: 'addCustomer' , component: AddCustomerComponent},
-  { path: 'addCampagny' , component: AddCampagnyComponent}
+  { path: 'addCampagny' , component: AddCampagnyComponent},
+  { path: 'addProject' , component: AddProjectComponent}
+
 ];
 
 @NgModule({

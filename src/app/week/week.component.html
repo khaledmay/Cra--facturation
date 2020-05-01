@@ -12,11 +12,11 @@
             <td class="col-sm-5">{{day.date}}</td>
             <td class="col-sm-5">{{day.dayName}}</td>
             <td class="col-sm-4">
-                <select #choice (change)="changeDayWorked(day,choice.value)">
-                    <option value="CRM">CRM</option>
-                    <option value="RTT">RTT</option>
-                    <option value="CP">CP</option>
-                </select>
+            <select #choice (change)="changeDayWorked(day,choice.value)">
+                <option *ngFor="let item of dayIsWorked()" [value]=item>
+                    {{ item }}
+                </option>
+            </select>
             </td>
             <td class="col-sm-4" *ngIf="day.dayWorked=='CRM'">
                 <input type="text" #hoursWorked name="hoursWorked" [value]=day.hoursWorked (change)="changeHoursWorked(day,hoursWorked)">

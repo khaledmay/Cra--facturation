@@ -1,0 +1,43 @@
+<div class="headerTitle">
+    <h2> --> Add a project</h2>
+</div>
+<div class="addProject">
+    <form [formGroup]="project" (ngSubmit)="addProject()">
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="titre" >titre</label>
+                <input formControlName="titre" type="text" class="form-control" id="titre" aria-describedby="titre Help" placeholder="Enter titre">
+            </div>
+            <div class="alert alert-danger" *ngIf="titre.touched && titre.invalid">
+                <div *ngIf="titre.errors.required">titre is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="referenceNumber">referenceNumber</label>
+                <input class="col-sm-4"formControlName="referenceNumber" type="text" class="form-control" id="referenceNumber" aria-describedby="referenceNumber Help" placeholder="Enter referenceNumber">
+            </div>
+            <div class="alert alert-danger" *ngIf="referenceNumber.touched && referenceNumber.invalid">
+                    <div *ngIf="referenceNumber.errors.required">referenceNumber is required.</div>
+            </div>
+            <div class="form-group">
+                <label>typeProjet</label>
+                <select #choice (change)="chooseProjectType(choice.value)">
+                    <option *ngFor="let type of projectTypes()" [value]=type>
+                        {{ type }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>statusProjet</label>
+                <select #choice (change)="chooseProjectStatus(choice.value)">
+                    <option *ngFor="let status of projectStates()" [value]=status>
+                        {{ status }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="col-sm-4"type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+            <div *ngIf="project.errors" class="alert alert-danger">The formular is invalid.</div>
+        </div>
+    </form>
+</div>
