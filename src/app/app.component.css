@@ -5,25 +5,6 @@
     height: 100%;
 }
 
-.vertical-menu {
-    position: absolute;
-    font-size: large;
-    font-weight: bold;
-    width : 100%;
-    background-color: darkslategray;
-    color: white;
-}
-
-.vertical-menu {
-    position: absolute;
-    font-size: large;
-    font-weight: bold;
-    width : 20%;
-    height: 100%;
-    background-color: darkslategray;
-    color: white;
-}
-
 .body {
     margin-left : 20%;
 }
