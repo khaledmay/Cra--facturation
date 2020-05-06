@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { RequestService } from '../services/requests.service';
+import { Project } from '../models/Project';
 import { ProjectType } from '../enums/ProjectType';
 import { ProjectStatus } from '../enums/ProjectStatus';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Project } from '../models/Project';
 
 @Component({
   selector: 'app-add-project',

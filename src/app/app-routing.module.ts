@@ -13,7 +13,6 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 
 
-
 const routes: Routes = [
   { path: '' , component: AuthentificationComponent},
   { path: 'login' , component: AuthentificationComponent},

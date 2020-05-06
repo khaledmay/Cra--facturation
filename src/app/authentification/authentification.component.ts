@@ -18,7 +18,8 @@ export class AuthentificationComponent implements OnInit {
   });
 
   constructor( private route: Router,
-               private authentificationService : AuthentificationService ) { }
+               private authentificationService : AuthentificationService,
+               ) {}
 
   ngOnInit() {
   }
@@ -58,7 +59,6 @@ export class AuthentificationComponent implements OnInit {
     this.account.setErrors({
       invalidUsernameOrPassword:true
     });
-      
   }
 
   onVerify(verifycode: HTMLInputElement) {
