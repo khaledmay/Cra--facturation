@@ -1,0 +1,83 @@
+<div class="addDetailsConsultantPrestation">
+    <div class="form-group">
+        <h5>Add a details Consultant Prestation</h5>
+    </div>
+    <form [formGroup]="detailConsultantPrestation" (ngSubmit)="addDetailsConsultantPrestation()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="id ">id</label>
+                <input formControlName="id" type="text" class="form-control" id="id" aria-describedby="id Help" placeholder="Enter id">
+            </div>
+            <div class="alert alert-danger" *ngIf="id.touched && id.invalid">
+                <div *ngIf="id.errors.required">id is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="idConsultantPrestation">id Consultant Prestation</label>
+              <input formControlName="idConsultantPrestation" type="text" class="form-control" id="idConsultantPrestation" aria-describedby="idConsultantPrestation Help" placeholder="Enter idConsultantPrestation">
+            </div>
+            <div class="alert alert-danger" *ngIf="idConsultantPrestation.touched && idConsultantPrestation.invalid">
+                <div *ngIf="idConsultantPrestation.errors.required">idConsultantPrestation is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="idConsultant">id Consultant</label>
+                <input formControlName="idConsultant" type="text" class="form-control" id="idConsultant" aria-describedby="idConsultant Help" placeholder="Enter idConsultant">
+              </div>
+              <div class="alert alert-danger" *ngIf="idConsultant.touched && idConsultant.invalid">
+                  <div *ngIf="idConsultant.errors.required">idConsultant is required.</div>
+              </div>
+
+            <div class="form-group">
+                <label for="creationDate">creation Date </label>
+                <input type="date" id="creationDate" name="creationDate" class="form-group"/>
+            </div>
+            <div class="form-group">
+                <label for="hoursWork">hours Work </label>
+                <input formControlName="hoursWork" type="text" class="form-control" id="hoursWork" aria-describedby="siret Help" placeholder="Enter hoursWork">
+            </div>
+            <div class="form-group">
+                <label for="day">day</label>
+                <input formControlName="day" type="text" class="form-control" id="day" aria-describedby="day Help" placeholder="Enter day">
+              </div>
+
+              <div class="form-group">
+                <label for="day">approved</label>
+                <input formControlName="approved" type="text" class="form-control" id="approved" aria-describedby="approved Help" placeholder="Enter approved">
+              </div>
+
+              <div class="form-group">
+                <label for="weekNum">weekNum</label>
+                <input formControlName="weekNum" type="text" class="form-control" id="weekNum" aria-describedby="weekNum Help" placeholder="Enter weekNum">
+              </div>
+              <div class="form-group">
+                <label for="dayName">day Name</label>
+                <input formControlName="dayName" type="text" class="form-control" id="dayName" aria-describedby="dayName Help" placeholder="Enter dayName">
+              </div>
+              <div class="form-group">
+                <label>typeRecuperation</label>
+                <select #choice (change)="chooseRecuperationType(choice.value)">
+                    <option *ngFor="let type of recuperationTypes()" [value]=type>
+                        {{ type }}
+                    </option>
+                </select>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">confirm</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="detailConsultantPrestation.errors" class="alert alert-danger">The details of consultant is invalid.</div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+

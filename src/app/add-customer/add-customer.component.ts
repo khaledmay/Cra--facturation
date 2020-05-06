@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Customer } from '../models/Customer';
-import { Campany } from '../models/Campany';
 import { RequestService } from '../services/requests.service';
+import { Company } from '../models/Company';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { RequestService } from '../services/requests.service';
 export class AddCustomerComponent implements OnInit {
 
   private url:String;
-  private campanies : Campany[]=[];
+  private campanies : Company[]=[];
   private choosenCampany: String;
   customer=new FormGroup({
     denomination : new FormControl('', Validators.required),
@@ -26,9 +26,7 @@ export class AddCustomerComponent implements OnInit {
   constructor(private requestService : RequestService) { 
     this.url=""; // url of the backend service which save the customer in the database
     // this.campanies= this.requestService.get()
-    this.campanies.push(new Campany("campany1","esn"));
-    this.campanies.push(new Campany("campany2","esn"));
-    this.campanies.push(new Campany("campany3","esn"));
+   
   }
 
   ngOnInit(): void {
@@ -58,7 +56,7 @@ export class AddCustomerComponent implements OnInit {
     return this.customer.get('responsableManager');
   }
 
-  public get Campanies(): Campany[] {
+  public get Campanies(): Company[] {
     return this.campanies;
   }
 

@@ -1,0 +1,30 @@
+<div class="prestation">
+    <div class="form-group">
+        <h5>Add a prestation</h5>
+    </div>
+    <form [formGroup]="prestation" (ngSubmit)="addPrestation()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="idCategoriePrestation ">id Categorie Prestation</label>
+                <input formControlName="idCategoriePrestation" type="text" class="form-control" id="idCategoriePrestation" aria-describedby="idCategoriePrestation Help" placeholder="Enter idCategoriePrestation">
+            </div>
+            <div class="alert alert-danger" *ngIf="idCategoriePrestation.touched && idCategoriePrestation.invalid">
+                <div *ngIf="idCategoriePrestation.errors.required">idCategoriePrestation is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="libellePrestation">libelle Prestation</label>
+              <input formControlName="libellePrestation" type="text" class="form-control" id="libellePrestation" aria-describedby="libellePrestation Help" placeholder="Enter libellePrestation">
+            </div>
+            <div class="alert alert-danger" *ngIf="libellePrestation.touched && libellePrestation.invalid">
+                <div *ngIf="libellePrestation.errors.required">libellePrestation is required.</div>
+            </div>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="prestation.errors" class="alert alert-danger">The formular is invalid.</div>
+              </div>
+        </div>
+    </form>
+</div>

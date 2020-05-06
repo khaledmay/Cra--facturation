@@ -8,7 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeekComponent } from './week/week.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component'; 
 import { HttpClientModule } from '@angular/common/http';
-import { AddCampanyComponent } from './add-campany/add-campany.component';
+import { PrestationComponent } from './prestation/prestation.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { AddConsultantComponent } from './add-consultant/add-consultant.component';
+import { AddCategoriePrestationComponent } from './add-categorie-prestation/add-categorie-prestation.component';
+import { AddConsultantPrestationComponent } from './add-consultant-prestation/add-consultant-prestation.component';
+import { AddDetailsConsultantPrestationComponent } from './add-details-consultant-prestation/add-details-consultant-prestation.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { AddCompanyComponent } from './add-company/add-company.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +24,14 @@ import { AddCampanyComponent } from './add-campany/add-campany.component';
     WriteCraComponent,
     WeekComponent,
     AddCustomerComponent,
-    AddCampanyComponent
+    PrestationComponent,
+    AddUserComponent,
+    AddConsultantComponent,
+    AddCategoriePrestationComponent,
+    AddConsultantPrestationComponent,
+    AddDetailsConsultantPrestationComponent,
+    AddProjectComponent,
+    AddCompanyComponent
  
   ],
   imports: [

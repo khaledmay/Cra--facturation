@@ -1,0 +1,26 @@
+<div class="addCategoriePrestation">
+    <div class="form-group">
+        <h5>Add a Categorie Prestation</h5>
+    </div>
+    <form [formGroup]="categoriePrestation" (ngSubmit)="addCategoriePrestation()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="domainePrestation ">domaine Prestation</label>
+                <input formControlName="domainePrestation" type="text" class="form-control" id="domainePrestation" aria-describedby="domainePrestation Help" placeholder="Enter domainePrestation">
+            </div>
+            <div class="alert alert-danger" *ngIf="domainePrestation.touched && domainePrestation.invalid">
+                <div *ngIf="domainePrestation.errors.required">domainePrestation is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="facturable">facturable</label>
+              <input formControlName="facturable" type="text" class="form-control" id="facturable" aria-describedby="facturable Help" placeholder="Enter facturable">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="categoriePrestation.errors" class="alert alert-danger">The formular is invalid.</div>
+              </div>
+        </div>
+    </form>
+</div>

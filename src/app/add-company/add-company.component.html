@@ -1,0 +1,29 @@
+<div class="headerTitle">
+    <h2>  Add a company</h2>
+</div>
+<div class="addCompany">
+    <form [formGroup]="company" (ngSubmit)="addCompany()">
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="denomination" >denomination</label>
+                <input formControlName="denomination" type="text" class="form-control" id="denomination" aria-describedby="denomination Help" placeholder="Enter denomination">
+            </div>
+            <div class="alert alert-danger" *ngIf="denomination.touched && denomination.invalid">
+                <div *ngIf="denomination.errors.required">denomination is required.</div>
+            </div>
+            <div class="form-group">
+                <label>typeCompany</label>
+                <select #choice (change)="chooseCompanyType(choice.value)">
+                    <option *ngFor="let type of companyType()" [value]=type>
+                        {{ type }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="col-sm-4"type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+            <div *ngIf="company.errors" class="alert alert-danger">The company is invalid.</div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,32 @@
+<div class="addConsultantPrestation">
+    <div class="form-group">
+        <h5>Add a Consultan Prestation</h5>
+    </div>
+    <form [formGroup]="consultantPrestation" (ngSubmit)="addConsultantPrestation()">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="tarifHT ">tarif HT</label>
+                <input formControlName="tarifHT" type="text" class="form-control" id="tarifHT" aria-describedby="tarifHT Help" placeholder="Enter tarifHT">
+            </div>
+            <div class="alert alert-danger" *ngIf="tarifHT.touched && tarifHT.invalid">
+                <div *ngIf="tarifHT.errors.required">tarifHT is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="dateAffectation">date Affectation </label>
+                <input type="date" id="dateAffectation" name="dateAffectation" class="form-group"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">confirm</button>
+            </div>
+            <div class="form-group">
+                <div *ngIf="consultantPrestation.errors" class="alert alert-danger">The consultant Prestation is invalid.</div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+

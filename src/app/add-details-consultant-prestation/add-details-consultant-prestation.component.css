@@ -1,0 +1,23 @@
+.addDetailsConsultantPrestation{
+    width: 600px;
+    border-collapse: collapse;
+    border: 1px solid black;
+	margin: auto;
+    margin-top : 4%;
+}
+
+
+select{
+    border-width: 1px;
+    height: 35px;
+    width: 200px;
+    justify-content: center;
+    float: right;
+}
+
+label {
+    border-width: 1px;
+    font-size: large;
+    font-weight: bold;
+    justify-content: center;
+}
