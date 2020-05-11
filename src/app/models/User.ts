@@ -13,6 +13,7 @@ export class User{
     public companyPosition : String;
 
 
+
     constructor(username : String,  name : String,  accessToken : String,  lastName : String, phoneNumber : String, companyPosition : String, password : String, email :String, temporaryPassword : String, newPassword : String, email_verified : Boolean){
         this.username=username;
         this.name=name;
