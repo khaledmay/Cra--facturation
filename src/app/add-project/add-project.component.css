@@ -1,6 +1,7 @@
 .headerTitle {
-    margin-left : 15%;
+    margin: auto;
     margin-top : 4%;
+    width: 600px;
 }
 
 .addProject{
@@ -16,7 +17,7 @@ select{
     height: 35px;
     width: 200px;
     justify-content: center;
-    float: right;
+    float: left;
 }
 
 label {

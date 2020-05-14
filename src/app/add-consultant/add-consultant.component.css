@@ -1,3 +1,9 @@
+.headerTitle {
+    margin: auto;
+    margin-top : 4%;
+    width: 600px;
+}
+
 .addConsultant{
     width: 600px;
     border-collapse: collapse;
@@ -11,7 +17,7 @@ select{
     height: 35px;
     width: 200px;
     justify-content: center;
-    float: right;
+    float: left;
 }
 
 label {

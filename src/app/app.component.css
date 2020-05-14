@@ -6,5 +6,45 @@
 }
 
 .body {
-    margin-left : 20%;
+    height: 100%;
 }
+
+
+.user-options{
+    margin-left : 10%;
+    width : 100%;
+}
+
+/* The subnavigation menu */
+.subnav {
+    width : 15%;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 28px;
+    border: none;
+    outline: none;
+    color: darkgray;
+    background-color: inherit;
+    font-family: inherit;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    margin-left: 0;
+    position: absolute;
+    background-color: darkslategray;
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }

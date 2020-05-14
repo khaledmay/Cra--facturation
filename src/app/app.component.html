@@ -1,13 +1,103 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <html>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link">CRA-FACTURATION</a>
+          <h4 class="nav-link">CRA-FACTURATION</h4>
         </li>
         <li class="nav-item">
           <img src="assets/logo.png" class="logo"> 
         </li>
       </ul>
+      <div class="user-options">
+          <ul class="navbar-nav">
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Consultant
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/addConsultant']">Ajouter Consultant</li>
+                  <li class="nav-link" [routerLink]="['/login']">Supprimer Consultant</li>
+                </ul>
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Client
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/addCompany']">Ajouter Client</li>
+                  <li class="nav-link" [routerLink]="['/login']">Supprimer Client</li>
+                </ul>
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Projet
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/addProject']">Ajouter Projet</li>
+                  <li class="nav-link" [routerLink]="['/login']">Supprimer Projet</li>
+                  <li class="nav-link" [routerLink]="['/login']">Attacher Consultant</li>
+                  <li class="nav-link" [routerLink]="['/login']">Détacher Consultant</li>
+                </ul>
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Prestation
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/addConsultantPrestation']">Ajouter Consultant Prestation</li>
+                  <li class="nav-link" [routerLink]="['/addDetailsConsultantPrestation']">Ajouter Details Consultant Prestation</li>
+                  <li class="nav-link" [routerLink]="['/addCategoriePrestation']">Ajouter Categorie Prestation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Facture
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/writeCra']">Saisir Cra</li>
+                </ul>
+              </div>
+            </div>
+            <div class="subnav">
+              <button class="subnavbtn">
+                <h4 class="nav-link">
+                  Manager
+                  <li class="fa fa-caret-down"></li>
+                </h4>
+              </button>
+              <div class="subnav-content">
+                <ul class="column">
+                  <li class="nav-link" [routerLink]="['/addUser']">Ajouter Utilisateur</li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+      </div>
       <ul *ngIf="isAuthenticated" class="navbar-nav ml-auto">
         <li class="nav-item text-nowrap active">
           <a class="nav-link">

@@ -1,9 +1,9 @@
 <div class="headerTitle">
-    <h2>  Add a project</h2>
+    <h2>Projet ->Ajouter projet</h2>
 </div>
 <div class="addProject">
     <form [formGroup]="project" (ngSubmit)="addProject()">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
             <div class="form-group">
                 <label for="titre" >titre</label>
                 <input formControlName="titre" type="text" class="form-control" id="titre" aria-describedby="titre Help" placeholder="Enter titre">
@@ -26,6 +26,8 @@
                     </option>
                 </select>
             </div>
+            <br/>
+            <br/>
             <div class="form-group">
                 <label>statusProjet</label>
                 <select #choice (change)="chooseProjectStatus(choice.value)">
@@ -34,6 +36,8 @@
                     </option>
                 </select>
             </div>
+            <br/>
+            <br/>
             <div class="form-group">
                 <button class="col-sm-4"type="submit" class="btn btn-primary">Confirm</button>
             </div>
