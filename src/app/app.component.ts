@@ -16,8 +16,7 @@ export class AppComponent implements AfterViewChecked {
   currentUser : string ;
   currentDate : string;
 
-
-  constructor( 
+  constructor(
     private authentificationService: AuthentificationService,
     private dateService: DateService,
     private changeDetectorRef: ChangeDetectorRef,
@@ -29,7 +28,7 @@ export class AppComponent implements AfterViewChecked {
     ngOnInit() {
       this.document.body.classList.add('bg-image');
     }
-      
+
     ngOnDestroy(): void {
       this.document.body.classList.remove('bg-image');
     }
@@ -50,12 +49,12 @@ export class AppComponent implements AfterViewChecked {
     const month=this.dateService.getCurrentDate().getMonth();
     const daysNumber=this.dateService.getdaysNumberInMonth();
     for(var i = 0; i < daysNumber; i++)
-    {       
+    {
       days.push(new Date(year,month,i));
     }
     console.log(days);
 
   }
-  
+
 
 }
