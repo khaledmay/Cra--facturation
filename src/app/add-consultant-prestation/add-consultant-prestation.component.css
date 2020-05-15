@@ -1,7 +1,19 @@
+.headerTitle {
+    margin: auto;
+    margin-top : 4%;
+    width: 600px;
+}
+
 .addConsultantPrestation{
     width: 600px;
     border-collapse: collapse;
     border: 1px solid black;
-	margin: auto;
-    margin-top : 4%;
+    margin : auto;
+}
+
+label {
+    border-width: 1px;
+    font-size: large;
+    font-weight: bold;
+    justify-content: center;
 }
